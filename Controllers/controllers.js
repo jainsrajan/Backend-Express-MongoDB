@@ -21,11 +21,15 @@ exports.register = async (req , res)=>{
 
         //Saving data in database.
 
-         await User.create({
-                 name,
-                 email,
-                 password     
-        })
+        //  await User.create({
+        //          name,
+        //          email,
+        //          password     
+        // })
+
+        //Different way to write this...
+
+         await User.create({...req.body})
      
         // res.status(201).json({
         //  status:true,
